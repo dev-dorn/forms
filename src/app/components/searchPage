@@ -1,0 +1,11 @@
+import {Search} from  '/Search';
+
+export default async function SearchPage(props: {
+    searchParams: Promise<{query: string}>;
+
+}){
+    const searchParams = await props.searchParams;
+    const comments =await getComments(searchParams.query);
+
+    return <Search comments ={comments}/>;
+}
